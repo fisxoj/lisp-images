@@ -1,0 +1,4 @@
+2018-12-12  Matt Novenstern  <fisxoj@gmail.com>
+
+	* Makefile (SBCL_VERSION): Bump to 1.4.14
+	(QUICKLISP_DIST): New dist 2018-12-11
