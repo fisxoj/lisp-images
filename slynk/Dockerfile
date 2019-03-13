@@ -20,7 +20,7 @@ RUN git clone https://github.com/joaotavora/sly-repl-ansi-color.git /quicklisp/l
 
 RUN git clone https://github.com/joaotavora/sly-quicklisp.git /quicklisp/local-projects/sly-quicklisp
 
-RUN sbcl --noninteractive --eval "(ql:quickload :slynk)"
+RUN sbcl --non-interactive --eval "(ql:quickload :slynk)"
 
 COPY ./scripts/start-slynk.lisp /build/start-slynk.lisp
 
