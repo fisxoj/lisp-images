@@ -1,0 +1,11 @@
+sudo: true
+
+jobs:
+  include:
+    - stage: build
+      script: make build
+    - stage: test
+      script: make test
+    - stage: deploy
+      if: type = push AND branch = master
+      script: make publish

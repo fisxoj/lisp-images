@@ -19,16 +19,30 @@ build-rove: rove/Dockerfile
 build-slynk:
 	$(HELPER) build slynk
 
-push: push-base push-prove push-rove push-slynk
+test: test-base test-prove test-rove test-slynk
 
-push-base: build-base
-	$(HELPER) push base
+test-base:
+	$(HELPER) smoke-test base "(ql:dist-version \"quicklisp\")"
 
-push-prove: build-prove
-	$(HELPER) push prove
+test-prove:
+	$(HELPER) smoke-test prove "(ql:quickload '(:prove :mockingbird))"
 
-push-rove: build-rove
-	$(HELPER) push rove
+test-rove:
+	$(HELPER) smoke-test rove "(ql:quickload '(:rove :mockingbird))"
 
-push-slynk: build-slynk
-	$(HELPER) push slynk
+test-slynk:
+	$(HELPER) smoke-test slynk "(ql:quickload :slynk)"
+
+publish: publish-base publish-prove publish-rove publish-slynk
+
+publish-base:
+	$(HELPER) publish base
+
+publish-prove:
+	$(HELPER) publish prove
+
+publish-rove:
+	$(HELPER) publish rove
+
+publish-slynk:
+	$(HELPER) publish slynk

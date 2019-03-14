@@ -1,4 +1,4 @@
-# Lisp Images for Docker
+# Lisp Images for Docker [![Build Status](https://travis-ci.org/fisxoj/lisp-images.svg?branch=master)](https://travis-ci.org/fisxoj/lisp-images)
 
 Here are a couple of images for using lisp in containerized environments!  There are a few variations that build on the `quicklisp-sbcl-base` image, which is Debian stretch with [sbcl](http://www.sbcl.org/) and [quicklisp](https://www.quicklisp.org/beta/) installed.
 
