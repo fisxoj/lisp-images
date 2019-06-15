@@ -1,4 +1,9 @@
-2019-03-12  Matt Novenstern  <fisxoj@ardens>
+2019-06-15  Matt Novenstern  <fisxoj@gmail.com>
+
+	* Makefile (SBCL_VERSION): Bump to 1.5.3
+	(QUICKLISP_DIST): New dist 2019-05-21
+
+2019-03-12  Matt Novenstern  <fisxoj@gmail.com>
 
 	* Makefile (SBCL_VERSION): Bump to 1.5.0
 	(QUICKLISP_DISP): New dist 2019-03-07
