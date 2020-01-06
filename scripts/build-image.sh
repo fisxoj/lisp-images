@@ -18,6 +18,10 @@ VERSIONED_TAG="${ORGANIZATION}/${BASE_NAME}-${VARIANT}:$(tag)"
 LATEST_TAG="${ORGANIZATION}/$BASE_NAME-${VARIANT}:latest"
 CI_TAG="${ORGANIZATION}/${BASE_NAME}-${VARIANT}:${TRAVIS_COMMIT}"
 
+# For me, locally!
+# shopt -s expand_aliases
+# alias docker=podman
+
 # https://stackoverflow.com/a/13864829
 if [ ! -z ${TRAVIS_COMMIT+x} ]; then
     # Login in a script to obscure credentials in CI
@@ -34,7 +38,12 @@ fi
 
 case "$1" in
     build)
-	docker build --build-arg SBCL_VERSION=${SBCL_VERSION} --build-arg QUICKLISP_DIST=${QUICKLISP_DIST} . -t "${TAG}"
+	docker build \
+               --build-arg SBCL_VERSION=${SBCL_VERSION} \
+               --build-arg QUICKLISP_DIST=${QUICKLISP_DIST} \
+               --build-arg TAG=${TRAVIS_COMMIT} \
+               . \
+               -t "${TAG}"
 
         if [ ! -z ${TRAVIS_COMMIT+x} ]; then
             echo "Pushing CI version of image"

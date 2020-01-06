@@ -1,4 +1,5 @@
-FROM parentheticalenterprises/sbcl-quicklisp-base
+ARG TAG
+FROM parentheticalenterprises/sbcl-quicklisp-base:${TAG}
 
 RUN apt-get update && \
     apt-get install -y -qq --no-install-recommends \

@@ -1,9 +1,11 @@
-QUICKLISP_DIST=2019-08-13
-SBCL_VERSION=1.5.6
+QUICKLISP_DIST=2019-12-27
+SBCL_VERSION=2.0.0
 export QUICKLISP_DIST
 export SBCL_VERSION
 
 HELPER=./scripts/build-image.sh
+
+.PHONY: build-base build-prove build-rove build-slynk
 
 build: build-base build-prove build-rove build-slynk
 

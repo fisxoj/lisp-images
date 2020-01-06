@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:buster-20191224
 
 LABEL maintainer=fisxoj@gmail.com
 
