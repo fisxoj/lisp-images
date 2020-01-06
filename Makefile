@@ -5,6 +5,8 @@ export SBCL_VERSION
 
 HELPER=./scripts/build-image.sh
 
+.PHONY: build-base build-prove build-rove build-slynk
+
 build: build-base build-prove build-rove build-slynk
 
 build-base: base/Dockerfile

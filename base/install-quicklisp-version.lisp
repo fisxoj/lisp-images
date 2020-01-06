@@ -4,4 +4,4 @@
     (if desired-version
 	(ql-dist:install-dist (cdr desired-version) :prompt nil :replace replace))))
 
-(install-quicklisp-version (uiop:getenv "QUICKLISP_VERSION"))
+(install-quicklisp-version (uiop:getenv "QUICKLISP_DIST"))
