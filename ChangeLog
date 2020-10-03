@@ -1,3 +1,8 @@
+2020-10-03  Matt Novenstern  <fisxoj@tabula>
+
+	* Makefile (QUICKLISP_DIST): 2020-09-25
+	(SBCL_VERSION): 2.0.9
+
 2020-04-03  Matt Novenstern  <fisxoj@tabula>
 
 	* Makefile (QUICKLISP_DIST): 2020-03-25
