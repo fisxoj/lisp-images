@@ -1,6 +1,11 @@
+2021-03-24  Matt Novenstern  <fisxoj@gmail.com>
+
+	* Makefile (SBCL_VERSION): 2.1.2
+	(QUICKLISP_DIST): 2021-01-24
+
 2021-02-21  Matt Novenstern  <fisxoj@gmail.com>
 
-	* Makefile (QUICKLISP_DIST): 20201-01-24
+	* Makefile (QUICKLISP_DIST): 2021-01-24
 	(SBCL_VERSION): 2.1.1
 
 2020-10-03  Matt Novenstern  <fisxoj@gmail.com>
