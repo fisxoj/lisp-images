@@ -1,4 +1,4 @@
-FROM debian:buster-20191224
+FROM debian:bullseye-20220711-slim
 
 LABEL maintainer=fisxoj@gmail.com
 

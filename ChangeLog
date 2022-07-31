@@ -1,3 +1,10 @@
+2022-07-31  Matt Novenstern  <fisxoj@gmail.com>
+
+	* Makefile (QUICKLISP_DIST): 2022-07-08
+	(SBCL_VERSION): 2.2.7
+
+	* base/Dockerfile: Upgraded base from buster to bullseye
+
 2021-03-24  Matt Novenstern  <fisxoj@gmail.com>
 
 	* Makefile (SBCL_VERSION): 2.1.2

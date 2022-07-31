@@ -19,8 +19,8 @@ LATEST_TAG="${ORGANIZATION}/$BASE_NAME-${VARIANT}:latest"
 CI_TAG="${ORGANIZATION}/${BASE_NAME}-${VARIANT}:${TRAVIS_COMMIT}"
 
 # For me, locally!
-# shopt -s expand_aliases
-# alias docker=podman
+shopt -s expand_aliases
+alias docker=podman
 
 # https://stackoverflow.com/a/13864829
 if [ ! -z ${TRAVIS_COMMIT+x} ]; then
