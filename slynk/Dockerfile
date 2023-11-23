@@ -1,9 +1,10 @@
-ARG TAG
-FROM parentheticalenterprises/sbcl-quicklisp-base:${TAG}
+ARG BASE_TAG
+FROM parentheticalenterprises/sbcl-quicklisp-base:${BASE_TAG}
 
 RUN apt-get update && \
     apt-get install -y -qq --no-install-recommends \
-	    git && \
+    	build-essential \
+	git && \
     apt-get -y autoremove --purge && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -21,10 +22,10 @@ RUN git clone https://github.com/joaotavora/sly-repl-ansi-color.git /quicklisp/l
 
 RUN git clone https://github.com/joaotavora/sly-quicklisp.git /quicklisp/local-projects/sly-quicklisp
 
-RUN sbcl --non-interactive --eval "(ql:quickload :slynk)"
+RUN sbcl --non-interactive --eval "(ql:quickload '(:slynk :trivial-signal))"
 
 COPY ./scripts/start-slynk.lisp /build/start-slynk.lisp
 
-EXPOSE 4008
+EXPOSE 4008 4009
 
 CMD ["sbcl", "--load", "/build/start-slynk.lisp"]
