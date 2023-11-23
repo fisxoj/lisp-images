@@ -1,4 +1,4 @@
-FROM debian:bullseye-20220711-slim
+FROM docker.io/debian:bookworm-20230612-slim
 
 LABEL maintainer=fisxoj@gmail.com
 
@@ -6,7 +6,7 @@ ARG SBCL_VERSION
 
 ARG QUICKLISP_PATH="/quicklisp"
 
-ARG QUICKLISP_VERSION
+ARG QUICKLISP_DIST
 
 RUN apt-get update && \
     apt-get install -y -qq --no-install-recommends \
@@ -39,4 +39,4 @@ RUN curl -O https://beta.quicklisp.org/quicklisp.lisp && \
 
 COPY install-quicklisp-version.lisp /build/
 
-RUN sbcl --non-interactive --load /build/install-quicklisp-version.lisp
+RUN env QUICKLISP_DIST=$QUICKLISP_DIST sbcl --non-interactive --load /build/install-quicklisp-version.lisp
