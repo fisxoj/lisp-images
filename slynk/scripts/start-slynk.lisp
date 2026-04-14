@@ -34,6 +34,10 @@
   (slynk:create-server :port slynk-port
                        :dont-close t)
 
+  (format t "~&Started server on port ~d using output port ~d"
+          slynk-port
+          slynk-output-port)
+
   (let ((should-shutdown nil))
     (flet ((handle-signal (signo)
              (format uiop:*stderr*
