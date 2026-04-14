@@ -1,5 +1,5 @@
-export QUICKLISP_DIST=2023-10-21
-export SBCL_VERSION=2.3.10
+export QUICKLISP_DIST=2026-01-01
+export SBCL_VERSION=2.6.0
 
 HELPER=./scripts/build-image.sh
 
