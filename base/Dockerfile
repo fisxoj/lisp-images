@@ -1,4 +1,4 @@
-FROM docker.io/debian:bookworm-20230612-slim
+FROM docker.io/debian:trixie-20251229-slim
 
 LABEL maintainer=fisxoj@gmail.com
 
