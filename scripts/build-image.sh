@@ -21,13 +21,13 @@ shopt -s expand_aliases
 alias docker=podman
 
 # https://stackoverflow.com/a/13864829
-if [ ! -z ${TRAVIS_COMMIT+x} ]; then
+if [ ! -z ${CI_COMMIT_REF_SLUG+x} ]; then
     # Login in a script to obscure credentials in CI
     echo "Logging into docker repo"
 
     echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USER --password-stdin
 
-    TAG=$CI_TAG
+    TAG=$CI_COMMIT_REF_SLUG
     BASE_TAG="$(release_tag)"
 else
     echo "Not logging into docker repo because we aren't in CI."
@@ -47,7 +47,7 @@ case "$1" in
                -t "${IMAGE_NAME}:latest"
 
 
-        if [ ! -z ${TRAVIS_COMMIT+x} ]; then
+        if [ ! -z ${CI_COMMIT_REF_SLUG+x} ]; then
             echo "Pushing CI version of image"
             docker push "${CI_TAG}"
         fi
